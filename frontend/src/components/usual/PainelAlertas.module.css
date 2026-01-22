@@ -1,0 +1,11 @@
+.container {
+  border-left: 4px solid #f87171; 
+}
+
+.emptyState {
+  font-style: italic;
+}
+
+.list li {
+  margin-bottom: 6px;
+}

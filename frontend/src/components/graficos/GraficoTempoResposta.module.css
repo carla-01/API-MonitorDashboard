@@ -1,0 +1,11 @@
+.container {
+  transition: box-shadow 0.2s ease, transform 0.1s ease;
+}
+
+.container:hover {
+  transform: translateY(-1px);
+}
+
+.title {
+  letter-spacing: 0.2px;
+}
