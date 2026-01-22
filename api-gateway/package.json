@@ -1,8 +1,29 @@
 {
   "name": "api-gateway",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "private": true,
+  "description": "API Gateway para o API Monitor Dashboard",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
+    "test": "node -e \"console.log('no tests');\""
+  },
   "dependencies": {
-    "api-monitor-dashboard": "file:.."
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "pg": "^8.11.3",
+    "redis": "^4.6.13",
+    "axios": "^1.7.7",
+    "prom-client": "^14.2.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0",
+    "ts-node-dev": "^2.0.0",
+    "@types/node": "^20.12.12",
+    "@types/express": "^4.17.21",
+    "@types/cors": "^2.8.17",
+    "@types/pg": "^8.10.2"
   }
 }

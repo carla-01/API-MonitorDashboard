@@ -1,14 +1,11 @@
 import React from 'react'
 import BarraSuperior from './components/topbar/topbar'
 import Rodape from './components/footer/footer'
-import { QueryClient, QueryClientProvider, useQueryClient } from 'react-query'
+import { QueryClient, QueryClientProvider, useQueryClient } from '@tanstack/react-query'
+import ErrorBoundary from './components/usual/ErrorBoundary'
 import { TestProvider } from './contexto/ContextoTeste'
 import './estilos.css'
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-  Navigate
+import {BrowserRouter,Routes,Route,Navigate
 } from 'react-router-dom'
 import PaginaTempoResposta from './paginas/PaginaTempoResposta'
 import PaginaTaxaErros from './paginas/PaginaTaxaErros'
@@ -68,7 +65,9 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <TestProvider>
         <BrowserRouter>
-          <AppContent />
+          <ErrorBoundary>
+            <AppContent />
+          </ErrorBoundary>
         </BrowserRouter>
       </TestProvider>
     </QueryClientProvider>

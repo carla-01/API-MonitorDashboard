@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './BarraSuperior.module.css'
+import styles from './topbar.module.css'
 import { Link } from 'react-router-dom'
 
 type BarraSuperiorProps = {

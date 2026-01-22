@@ -37,7 +37,7 @@ cp .env.example .env
 docker-compose up --build
 
 Serviços:
-# Frontend: http://localhost:3000
+# Frontend: http://localhost:4173
 # API Gateway: http://localhost:3001
 # Monitor Service: http://localhost:5000
 # PostgreSQL: http://localhost:5432

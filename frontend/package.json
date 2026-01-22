@@ -1,21 +1,28 @@
 {
   "name": "frontend",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "private": true,
+  "description": "Frontend do API Monitor Dashboard",
   "dependencies": {
-    "cors": "^2.8.5",
-    "csstype": "^3.2.3",
-    "dotenv": "^17.2.3",
-    "express": "^5.2.1",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
-    "scheduler": "^0.27.0"
+    "csstype": "^3.2.3",
+    "@tanstack/react-query": "^5.50.0",
+    "react-router-dom": "^6.23.0",
+    "recharts": "^2.10.0",
+    "axios": "^1.7.7"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0",
+    "typescript": "^5.4.0",
+    "@vitejs/plugin-react": "^4.2.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview --port 4173"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "MIT"
 }

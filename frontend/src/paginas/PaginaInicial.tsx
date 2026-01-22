@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useQueryClient } from 'react-query'
+import { useQueryClient } from '@tanstack/react-query'
 import { fetchProxy } from '../servicos/api'
 import ModalHistoricoBusca from '../components/modalhistorico/ModalHistoricoBusca'
 import { addSearch } from '../servicos/historicoBusca'

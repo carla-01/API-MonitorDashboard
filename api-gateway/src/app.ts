@@ -161,7 +161,7 @@ app.get('/api/over-time', async (req, res) => {
       FROM buckets
       ORDER BY bucket ASC
     `)
-    res.json(rows.map(r => ({
+    res.json(rows.map((r: any) => ({
       timestamp: r.bucket,
       avg_response_time_ms: Number(r.avg_response || 0),
       error_rate: Number((r.error_rate || 0).toFixed(4))

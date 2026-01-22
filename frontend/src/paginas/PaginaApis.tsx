@@ -1,6 +1,6 @@
 import React from 'react'
-import { useQuery } from 'react-query'
-import { fetchProxy } from '../servicos/api'
+import { useQuery } from '@tanstack/react-query'
+import { fetchProxy, ProxyResponse } from '../servicos/api'
 import LayoutPagina from '../layout/LayoutPagina'
 import { useLocation } from 'react-router-dom'
 import { useTest } from '../contexto/ContextoTeste'
@@ -11,7 +11,9 @@ const ApisPage: React.FC = () => {
   const q = (params.get('search') || '').trim().toLowerCase()
   const isUrl = /^https?:\/\//i.test(q)
 
-  const { data: proxyResult } = useQuery(['proxy', q], () => fetchProxy(q), {
+  const { data: proxyResult, error, status } = useQuery<ProxyResponse>({
+    queryKey: ['proxy', q],
+    queryFn: () => fetchProxy(q),
     enabled: isUrl && !!q,
     retry: false,
   })
@@ -26,6 +28,11 @@ const ApisPage: React.FC = () => {
   ) : null
   return (
     <LayoutPagina>
+      {status === 'error' && (
+        <div style={{ background: '#fff7ed', border: '1px solid #fde68a', borderRadius: '0.5rem', padding: '0.75rem', marginBottom: '1rem', color: '#92400e' }}>
+          Falha ao consultar API: {String((error as any)?.message || 'erro desconhecido')}
+        </div>
+      )}
       {testedUrlCard}
       {isUrl && proxyResult && (
         <div style={{ background: '#ffffff', border: '1px solid #e5e7eb', borderRadius: '0.5rem', padding: '1rem', marginBottom: '1rem' }}>
